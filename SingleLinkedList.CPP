@@ -64,13 +64,14 @@ public:
     }
 
     bool listEmpty(
-        
+
     )
     {
         return START == NULL;
     }
 
-    bool search(int nim, Node *&previous, Node *&current)
+    bool search(int nim, Node *&previous, Node *&current
+    )
     {
         previous = START;
         current = START;
@@ -84,7 +85,8 @@ public:
         return current != NULL;
     }
 
-    bool deleteNode(int nim)
+    bool deleteNode(int nim
+    )
     {
         Node *previous, *current;
 
