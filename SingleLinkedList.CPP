@@ -90,7 +90,8 @@ public:
     {
         Node *previous, *current;
 
-        if (!search(nim, previous, current))
+        if (!search(nim, previous, current)
+    )
             return false;
 
         if (current == START)
