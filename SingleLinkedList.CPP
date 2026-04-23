@@ -151,7 +151,8 @@ int main()
             break;
 
         case '2':
-            if (mhs.listEmpty())
+            if (mhs.listEmpty()
+        )
             {
                 cout << "\nList Kosong" << endl;
                 break;
