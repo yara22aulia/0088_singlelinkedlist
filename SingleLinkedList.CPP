@@ -32,7 +32,8 @@ public:
         nodeBaru->noMhs = nim;
         nodeBaru->next = NULL;
 
-        if (START == NULL || nim <= START->noMhs)
+        if (START == NULL || nim <= START->noMhs
+        )
         {
             if (START != NULL && nim == START->noMhs)
             {
