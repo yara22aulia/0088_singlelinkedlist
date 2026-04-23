@@ -14,15 +14,12 @@ class LinkedList
     Node *START;
 
 public:
-    LinkedList(
-
-    )
+    LinkedList()
     {
         START = NULL;
     }
 
-    void addNode
-    ()
+    void addNode()
     {
         int nim;
         cout << "\nMasukkan Nomor Mahasiswa: ";
@@ -32,8 +29,7 @@ public:
         nodeBaru->noMhs = nim;
         nodeBaru->next = NULL;
 
-        if (START == NULL || nim <= START->noMhs
-        )
+        if (START == NULL || nim <= START->noMhs)
         {
             if (START != NULL && nim == START->noMhs)
             {
@@ -122,3 +118,81 @@ public:
         }
     }
 };
+
+int main()
+{
+    LinkedList mhs;
+    int nim;
+    char ch;
+
+    do
+    {
+        cout << "\nMenu:" << endl;
+        cout << "1. Menambah data ke dalam list" << endl;
+        cout << "2. Menghapus data dari dalam list" << endl;
+        cout << "3. Menampilkan semua data didalam list" << endl;
+        cout << "4. Mencari data dalam list" << endl;
+        cout << "5. Keluar" << endl;
+
+        cout << "Masukkan Pilihan (1-5): ";
+        cin >> ch;
+
+        switch (ch)
+        {
+        case '1':
+            mhs.addNode();
+            break;
+
+        case '2':
+            if (mhs.listEmpty())
+            {
+                cout << "\nList Kosong" << endl;
+                break;
+            }
+
+            cout << "\nMasukkan Nomor Mahasiswa yang akan dihapus: ";
+            cin >> nim;
+
+            if (mhs.deleteNode(nim))
+                cout << "\nData berhasil dihapus\n";
+            else
+                cout << "\nData dengan nomor mahasiswa " << nim << " tidak ditemukan\n";
+            break;
+
+        case '3':
+            mhs.traverse();
+            break;
+
+        case '4':
+        {
+            if (mhs.listEmpty())
+            {
+                cout << "\nList Kosong\n";
+                break;
+            }
+
+            Node *previous, *current;
+            cout << "\nMasukkan Nomor Mahasiswa yang akan dicari: ";
+            cin >> nim;
+
+            if (mhs.search(nim, previous, current) == false)
+                cout << "\nData tidak ditemukan\n";
+            else
+            {
+                cout << "\nData ditemukan\n";
+                cout << "NIM Mahasiswa: " << current->noMhs << endl;
+            }
+            break;
+        }
+
+        case '5':
+            break;
+
+        default:
+            cout << "\nPilihan Salah\n";
+        }
+
+    } while (ch != '5');
+
+    return 0;
+}
