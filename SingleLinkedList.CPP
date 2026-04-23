@@ -14,12 +14,15 @@ class LinkedList
     Node *START;
 
 public:
-    LinkedList()
+    LinkedList(
+
+    )
     {
         START = NULL;
     }
 
-    void addNode()
+    void addNode
+    ()
     {
         int nim;
         cout << "\nMasukkan Nomor Mahasiswa: ";
